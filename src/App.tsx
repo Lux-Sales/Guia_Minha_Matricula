@@ -1,8 +1,13 @@
 import React from 'react';
+import NavBar from './components/NavBar';
+import './styles/global.css';
 
 function App() {
   return (
-    <h1>hello world</h1>
+    <div>
+      <NavBar />
+      <h1>hello world</h1>
+    </div>
   );
 }
 

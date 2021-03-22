@@ -1,0 +1,27 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@800&display=swap');
+
+:root{
+    --white: #fff;
+    --background: #F2F3F5;
+    --blue: #5965E0;
+    --blue-dark: #4953B8;
+    --blue-twitter: #2AA9E0;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing:  border-box;
+}
+
+body{
+    background-color: var(--white);
+    /* color: var(--text); */
+}
+
+button{
+    cursor: pointer;
+}
+
+
+
