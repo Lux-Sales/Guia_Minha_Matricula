@@ -1,0 +1,14 @@
+.container{
+    height: 90vh;
+
+    display: flex;
+    flex-direction: row;
+    justify-content:space-evenly;
+    align-items: center;
+}
+
+.homeImg {
+    height: 90vh;
+}
+
+

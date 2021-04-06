@@ -1,0 +1,86 @@
+.container{
+    width: 400px;
+    height: 300px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+
+}
+
+.container h2{
+    font-size: 40px;
+    font-family: Roboto, sans-serif;
+
+    text-align: left;
+
+    width: 100%;
+
+    color: var(--blue-darker);
+}
+
+.container p{
+    font-family: Roboto, sans-serif;
+    font-size: 18px;
+
+    text-align: left;
+
+    color: var(--blue-dark);
+
+}
+
+.container .buttons{
+    width: 100%;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+    font-family: Roboto, sans-serif;
+}
+
+.container .buttons .registerButton{
+    width: 40%;
+    height: 40px;
+
+    border-radius: 5px;
+    border-color: var(--blue-dark);
+
+    color: var(--white);
+    background-color: var(--blue-dark);
+
+    font-weight: 600;
+    font-size: 15px;
+
+    transition: filter 0.3s;
+
+    outline: none;
+}
+
+.container .buttons .aboutButton{
+    width: 40%;
+    height: 40px;
+
+    border-radius: 5px;
+    border-color: var(--blue-darker);
+
+    color: var(--blue-darker);
+    background-color: var(--white);
+
+    font-weight: 600;
+    font-size: 15px;
+
+    transition: filter 0.3s;
+
+    outline: none;
+}
+
+.container .buttons .registerButton:hover{
+    filter: opacity(0.9);
+}
+
+.container .buttons .aboutButton:hover{
+    filter:brightness(0.85);
+}

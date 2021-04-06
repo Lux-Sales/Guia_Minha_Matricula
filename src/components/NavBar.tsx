@@ -1,15 +1,16 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import styles from '../styles/components/NavBar.module.css';
 
 function NavBar() {
   return (
     <header className={styles.navBar}>
       <div>
-        <img src="imgs/logo.png" alt="logo" />
-        <span>About Us</span>
-        <span>Contact</span>
+        <Link to="/"><img src="imgs/logo.png" alt="logo" /></Link>
+        <span>Sobre</span>
+        <span>Contato</span>
       </div>
-      <button type="button">Login</button>
+      <Link to="/login"><button type="button">Login</button></Link>
     </header>
   );
 }

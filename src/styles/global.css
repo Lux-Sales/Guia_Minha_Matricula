@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300&display=swap');
 
 :root{
     --white: #fff;
@@ -6,6 +7,8 @@
     --blue: #5965E0;
     --blue-dark: #4953B8;
     --blue-twitter: #2AA9E0;
+    --blue-darker: #142634;
+    --text: #666666;
 }
 
 *{
@@ -15,13 +18,14 @@
 }
 
 body{
-    background-color: var(--white);
-    /* color: var(--text); */
+    background-color: var(--background);
 }
 
 button{
     cursor: pointer;
 }
+
+
 
 
 
