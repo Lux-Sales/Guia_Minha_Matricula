@@ -1,4 +1,5 @@
 import { useContext } from 'react';
+import { Link } from 'react-router-dom';
 import styles from '../styles/components/HomeContent.module.css';
 import { RegisterContext } from '../contexts/RegisterContext';
 
@@ -18,7 +19,7 @@ function HomeContent() {
       </p>
       <div className={styles.buttons}>
         <button type="button" className={styles.registerButton} onClick={showRegisterModal}>Cadastrar</button>
-        <button type="button" className={styles.aboutButton}>Saiba Mais</button>
+        <Link to="/sobre" className={styles.link}><button type="button" className={styles.aboutButton}>Saiba Mais</button></Link>
       </div>
     </div>
   );
