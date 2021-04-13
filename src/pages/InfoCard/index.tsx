@@ -1,4 +1,5 @@
 import React from 'react';
+import { Div } from './styles';
 
 interface InfoCardProps {
     title: string
@@ -7,13 +8,13 @@ interface InfoCardProps {
 
 const InfoCard: React.FC<InfoCardProps> = ({ title, text }) => (
   <>
-    <div>
+    <Div>
       <img src="imgs/Icon.png" alt="livro e lápis" />
       <h2>{title}</h2>
-      <p>
+      <span>
         {text}
-      </p>
-    </div>
+      </span>
+    </Div>
   </>
 );
 export default InfoCard;

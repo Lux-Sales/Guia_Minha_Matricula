@@ -1,13 +1,15 @@
 import React from 'react';
 import InfoCard from '../InfoCard';
-import { MainDiv, TextDiv } from './styles';
+import { MainDiv, RightDiv } from './styles';
+import NavBar from '../NavBar';
 
 const AboutPage:React.FC = () => (
-  <MainDiv>
-    <img src="imgs/unb_alunos.jpg" alt="campus unb" />
-    <TextDiv>
-      <div>
-        <header>Feito por quem é da Unb para a UnB!</header>
+  <>
+    <NavBar />
+    <MainDiv>
+      <img src="imgs/unb_alunos.jpg" alt="campus unb" />
+      <RightDiv>
+        <h1>Feito por quem é da Unb para a UnB!</h1>
         <p>
           Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
           Aenean commodo ligula eget dolor. Aenean massa.
@@ -16,27 +18,30 @@ const AboutPage:React.FC = () => (
           Donec quam felis,
           ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim.
         </p>
-      </div>
-      <div>
-        <InfoCard
-          title="Veja experiências de outros discentes."
-          text="Lorem ipsum dolor sit amet, consectetuer adipiscing elit.Aenean commodo ligula eget dolor."
-        />
-        <InfoCard
-          title="Veja experiências de outros discentes."
-          text="Lorem ipsum dolor sit amet, consectetuer adipiscing elit.Aenean commodo ligula eget dolor."
-        />
-        <InfoCard
-          title="Veja experiências de outros discentes."
-          text="Lorem ipsum dolor sit amet, consectetuer adipiscing elit.Aenean commodo ligula eget dolor."
-        />
-        <InfoCard
-          title="Veja experiências de outros discentes."
-          text="Lorem ipsum dolor sit amet, consectetuer adipiscing elit.Aenean commodo ligula eget dolor."
-        />
-      </div>
-    </TextDiv>
-  </MainDiv>
+        <div>
+
+          <InfoCard
+            title="Veja experiências de outros discentes."
+            text="Lorem ipsum dolor sit amet, consectetuer adipiscing elit.Aenean commodo ligula eget dolor."
+          />
+          <InfoCard
+            title="Docentes, contribuam também!"
+            text="Lorem ipsum dolor sit amet, consectetuer adipiscing elit.Aenean commodo ligula eget dolor."
+          />
+        </div>
+        <div>
+          <InfoCard
+            title="Compartilhe sua opinião."
+            text="Lorem ipsum dolor sit amet, consectetuer adipiscing elit.Aenean commodo ligula eget dolor."
+          />
+          <InfoCard
+            title="Seja respeitoso"
+            text="Lorem ipsum dolor sit amet, consectetuer adipiscing elit.Aenean commodo ligula eget dolor."
+          />
+        </div>
+      </RightDiv>
+    </MainDiv>
+  </>
 );
 
 export default AboutPage;

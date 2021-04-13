@@ -6,7 +6,7 @@ import { Div, ButtonsDiv, MainDiv } from './styles';
 const HomeContent: React.FC = () => {
   const [modal, setModal] = useState(false);
 
-  const showModal = () => {
+  const changeModal = () => {
     setModal(true);
   };
   return (
@@ -25,7 +25,7 @@ const HomeContent: React.FC = () => {
             Nulla consequat massa quis enim.
           </p>
           <ButtonsDiv>
-            <button onClick={showModal}>Cadastrar</button>
+            <button onClick={changeModal}>Cadastrar</button>
             <Link to="/sobre"><button type="button">Saiba Mais</button></Link>
           </ButtonsDiv>
         </Div>
