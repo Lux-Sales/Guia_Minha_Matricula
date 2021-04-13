@@ -1,32 +1,25 @@
 import React from 'react';
+import { MainDiv } from './styles';
 
 const RegisterModal: React.FC = () => (
   <>
-    <div>
+    <MainDiv>
+      <strong>Cadastre-se</strong>
+      <label htmlFor="name">Nome</label>
+      <input name="name" type="input" placeholder="Nome" />
+      <label htmlFor="lastName">Sobrenome</label>
+      <input name="lastName" type="input" placeholder="Sobrenome" />
+      <label htmlFor="email">Email Institucional</label>
+      <input name="email" type="email" placeholder="Email" />
+      <label htmlFor="password">Senha</label>
+      <input type="password" name="password" placeholder="Senha" />
+      <label htmlFor="confirmPassword">Confirmar Senha</label>
+      <input type="password" name="confirmPassword" placeholder="Confirmar senha" />
       <div>
-        <div>
-          <header>
-            <strong>Cadastre-se</strong>
-            <button>
-              <img src="imgs/close.svg" alt="fechar" />
-            </button>
-          </header>
-          <form>
-            <label htmlFor="name">Nome</label>
-            <input id="name" type="input" />
-            <label htmlFor="lastName">Sobrenome</label>
-            <input id="lastName" type="input" />
-            <label htmlFor="email">Email Institucional</label>
-            <input id="email" type="email" />
-            <label htmlFor="password">Senha</label>
-            <input type="password" id="password" />
-            <label htmlFor="confirmPassword">Confirmar Senha</label>
-            <input type="password" id="confirmPassword" />
-            <button>Cadastrar</button>
-          </form>
-        </div>
+        <button>Cadastrar</button>
+        <button>Voltar</button>
       </div>
-    </div>
+    </MainDiv>
   </>
 );
 

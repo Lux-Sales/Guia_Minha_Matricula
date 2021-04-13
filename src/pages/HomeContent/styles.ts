@@ -9,7 +9,7 @@ export const Div = styled.div`
     justify-content: space-between;
     align-items: center;
     position: absolute;
-    top: 200px;
+    top: 260px;
     left: 100px;
     z-index: 10;
     h2{
@@ -20,7 +20,8 @@ export const Div = styled.div`
 
     width: 100%;
 
-    color: #06427a;
+    color: #000;
+    margin-bottom: 0px;
     }
     p{
         font-family: Roboto, sans-serif;
