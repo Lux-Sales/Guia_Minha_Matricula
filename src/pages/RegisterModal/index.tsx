@@ -1,22 +1,13 @@
-import { useContext } from 'react';
-import styles from '../styles/components/RegisterModal.module.css';
-import { RegisterContext } from '../contexts/RegisterContext';
+import React from 'react';
 
-function Cadastro() {
-  const { isRegisterModalOpen, hideRegisterModal } = useContext(RegisterContext);
-
-  function showHideModal() {
-    if (isRegisterModalOpen) return styles.displayblock;
-    return styles.displaynone;
-  }
-
-  return (
-    <div className={showHideModal()}>
-      <div className={styles.overlay}>
-        <div className={styles.container}>
+const RegisterModal: React.FC = () => (
+  <>
+    <div>
+      <div>
+        <div>
           <header>
             <strong>Cadastre-se</strong>
-            <button type="button" onClick={hideRegisterModal} className={styles.closeButton}>
+            <button>
               <img src="imgs/close.svg" alt="fechar" />
             </button>
           </header>
@@ -31,12 +22,12 @@ function Cadastro() {
             <input type="password" id="password" />
             <label htmlFor="confirmPassword">Confirmar Senha</label>
             <input type="password" id="confirmPassword" />
-            <button type="submit" className={styles.registerButton}>Cadastrar</button>
+            <button>Cadastrar</button>
           </form>
         </div>
       </div>
     </div>
-  );
-}
+  </>
+);
 
-export default Cadastro;
+export default RegisterModal;

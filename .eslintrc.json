@@ -22,7 +22,8 @@
         "@typescript-eslint"
     ],
     "rules": {
-			"react-hooks/rules-of-hooks": "error",
+        "react/prop-types":"off",
+		"react-hooks/rules-of-hooks": "error",
 	    "react-hooks/exhaustive-deps": "warn",
 	    "react/jsx-filename-extension": [
 	      1,
@@ -44,6 +45,7 @@
 	    "@typescript-eslint/no-use-before-define": [
 	      "error"
 	    ],
+        "import/prefer-default-export": "off",
 	    "react/react-in-jsx-scope": "off",
         "jsx-a11y/label-has-associated-control": ["error", {
             "required": {
@@ -54,7 +56,8 @@
             "required": {
               "some": ["nesting", "id"]
             }
-        }]
+        }],
+        "react/button-has-type": "off"
     },
     "settings": {
       "import/resolver": {
