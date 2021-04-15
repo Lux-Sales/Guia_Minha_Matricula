@@ -52,6 +52,7 @@ a{
 }
 span{
     cursor: pointer;
+    color: #06427a;
     &:hover{
         color:${shade(0.4, '#06427a')}
     }
