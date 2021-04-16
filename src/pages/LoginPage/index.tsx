@@ -1,5 +1,5 @@
 import React from 'react';
-import LoginCard from '../../components/LoginCard';
+import LoginCard from '../LoginCard';
 import NavBar from '../NavBar';
 import './style.css';
 
