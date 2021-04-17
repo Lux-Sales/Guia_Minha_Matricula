@@ -1,35 +1,31 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
-import RegisterModal from '../RegisterModal';
 import { Div, ButtonsDiv, MainDiv } from './styles';
 
-const HomeContent: React.FC = () => {
-  const [modal, setModal] = useState(false);
+interface HomeContentProps{
+    setIsRegisterModalOpen: (arg0: boolean) => void;
+}
 
-  return (
-    <>
-      {modal && <RegisterModal />}
-      <MainDiv>
-
-        <Div>
-          <h2>Guia Minha Matrícula</h2>
-          <p>
-            Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
-            Aenean commodo ligula eget dolor. Aenean massa.
-            Cum sociis natoque penatibus et magnis dis parturient montes,
-            nascetur ridiculus mus.
-            Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem.
-            Nulla consequat massa quis enim.
-          </p>
-          <ButtonsDiv>
-            <button onClick={() => setModal(true)}>Cadastrar</button>
-            <Link to="/sobre"><button type="button">Saiba Mais</button></Link>
-          </ButtonsDiv>
-        </Div>
-        <img src="imgs/designer_1.png" alt="fundo" />
-      </MainDiv>
-    </>
-  );
-};
+const HomeContent: React.FC<HomeContentProps> = (props: HomeContentProps) => (
+  <>
+    <MainDiv>
+      <Div>
+        <h2>Guia Minha Matrícula</h2>
+        <p>
+          Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
+          Aenean commodo ligula eget dolor. Aenean massa.
+          Cum sociis natoque penatibus et magnis dis parturient montes,
+          nascetur ridiculus mus.
+          Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem.
+          Nulla consequat massa quis enim.
+        </p>
+        <ButtonsDiv>
+          <button onClick={() => props.setIsRegisterModalOpen(true)}>Cadastrar</button>
+          <Link to="/sobre"><button type="button">Saiba Mais</button></Link>
+        </ButtonsDiv>
+      </Div>
+    </MainDiv>
+  </>
+);
 
 export default HomeContent;

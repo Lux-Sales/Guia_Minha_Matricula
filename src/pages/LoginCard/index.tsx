@@ -1,39 +1,52 @@
-import React from 'react';
-import './style.css';
+import React, { useState } from 'react';
+import { login } from '../../service/UserService';
+import { MainDiv } from './styles';
 
-const LoginCard: React.FC = () => (
+interface LoginCardProps{
+    setIsRegisterModalOpen: (arg0: boolean) => void;
+}
 
-  <div className="centro">
+const LoginCard: React.FC<LoginCardProps> = (props: LoginCardProps) => {
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
 
-    <div className="titulo">
-      <img src="imgs/circulo_logo_login.svg" alt="fundo" />
-      <h1>Guia Minha Matricula</h1>
-    </div>
+  return (
+    <>
+      <MainDiv>
+        <header>
+          <strong>Guia Minha Matrícula</strong>
+        </header>
 
-    <form>
-      <div className="formulario">
-        <div className="formulario-item">
-          <input type="email" placeholder="Email" required />
+        <div>
+          <label htmlFor="email">Email Institucional</label>
+          <input name="email" type="email" placeholder="Email" onChange={(e) => setEmail(e.target.value)} />
+          <label htmlFor="password">Senha</label>
+          <input type="password" name="password" placeholder="Senha" onChange={(e) => setPassword(e.target.value)} />
+          <button
+            onClick={() => login({
+              email,
+              senha: password,
+            })}
+          >
+            Entrar
+          </button>
         </div>
 
-        <div className="formulario-item">
-          <input type="password" placeholder="senha" required />
+        <div>
+          <span> Esqueceu sua senha ? </span>
+          <span
+            onClick={() => props.setIsRegisterModalOpen(true)}
+            onKeyDown={() => props.setIsRegisterModalOpen(true)}
+            role="button"
+            tabIndex={0}
+          >
+            Cadastre-se
+          </span>
         </div>
+      </MainDiv>
+    </>
 
-        <div className="formulario-item">
-          <input className="botao" type="submit" value="entrar" />
-        </div>
-
-        <div id="link1" className="formulario-item">
-          <a className="link" href="/link1"> Esqueceu sua senha ? </a>
-          <a className="link" href="/link2"> Torne-se um membro </a>
-        </div>
-
-      </div>
-    </form>
-
-  </div>
-
-);
+  );
+};
 
 export default LoginCard;
