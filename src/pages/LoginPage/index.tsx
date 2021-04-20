@@ -1,19 +1,22 @@
-import React from 'react';
-import LoginCard from '../LoginCard';
+import React, { useState } from 'react';
+import LoginCard from '../LoginCard/index';
 import NavBar from '../NavBar';
-import './style.css';
+import RegisterModal from '../RegisterModal';
+import { MainDiv } from './styles';
 
-const LoginPage: React.FC = () => (
-  <>
-    <header>
+const LoginPage: React.FC = () => {
+  const [isRegisterModalOpen, setIsRegisterModalOpen] = useState(false);
+
+  return (
+    <>
       <NavBar />
-    </header>
+      {isRegisterModalOpen && <RegisterModal setIsRegisterModalOpen={setIsRegisterModalOpen} />}
+      <MainDiv>
+        <LoginCard setIsRegisterModalOpen={setIsRegisterModalOpen} />
+        <img src="imgs/people-connected-in-a-web.png" alt="fundo" />
+      </MainDiv>
+    </>
 
-    <div className="conteiner">
-      <LoginCard />
-      <img src="imgs/rostos_com_tracos_login.svg" alt="fundo" />
-    </div>
-
-  </>
-);
+  );
+};
 export default LoginPage;

@@ -1,40 +1,22 @@
-import styled from 'styled-components';
 import { shade } from 'polished';
-
-export const OverlayDiv = styled.div`
-    background: rgba(0, 0, 0, 0.3);
-    position: fixed;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-`;
+import styled from 'styled-components';
 
 export const MainDiv = styled.div`
-    position: relative;
-
-    height: 560px;
+    height: 380px;
     width: 400px;
 
-    text-align: center;
 
+    text-align: center;
     border-radius: 5px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, .1),0 8px 16px rgba(0, 0, 0, .1);
 
     background-color: #fff;
-
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
     align-items: center;
 
     padding: 15px;
-    padding-bottom: 0;
 
     header{
         width: 100%;
@@ -53,22 +35,7 @@ export const MainDiv = styled.div`
         color: #4953B8;
     }
 
-    header button{
-        position:absolute;
-        right: 0.5rem;
-        top: 0.5rem;
-        background: transparent;
-        border: 0;
-        font-size: 0;
-
-        cursor: pointer;
-    }
-
-    header button:focus{
-        outline: none;
-    }
-
-    div{
+    div:first-of-type{
         width: 100%;
 
         display: flex;
@@ -96,7 +63,16 @@ export const MainDiv = styled.div`
 
     }
 
-    div button{
+    label{
+        font-size: 1.25rem;
+
+        width: 100%;
+        text-align: left;
+
+        padding: 3px;
+    }
+
+    button{
         width: 100%;
         height: 50px;
 
@@ -122,18 +98,22 @@ export const MainDiv = styled.div`
 
     }
 
-    div button:disabled{
-        cursor: default;
-        background-color: #4953B8;
-        opacity: 0.8;
+    div:last-of-type{
+        width: 100%;
+
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-evenly;
     }
 
-    label{
-        font-size: 1.25rem;
+    span{
+        color: #4953B8;
+        &:hover{
+            color: ${shade(0.4, '#4953B8')}
+        }
 
-        width: 100%;
-        text-align: left;
-
-        padding: 3px;
+        cursor: pointer;
+        outline: none;
     }
 `;
