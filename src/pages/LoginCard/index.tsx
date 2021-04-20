@@ -25,7 +25,7 @@ const LoginCard: React.FC<LoginCardProps> = (props: LoginCardProps) => {
           <button
             onClick={() => login({
               email,
-              senha: password,
+              password,
             })}
           >
             Entrar

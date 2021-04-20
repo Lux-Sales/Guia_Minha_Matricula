@@ -5,7 +5,7 @@ import api from './API';
 
 interface User{
     email:string,
-    senha:string
+    password:string
 }
 
 interface SignupData{
@@ -15,7 +15,9 @@ interface SignupData{
     password:string,
 }
 
-export const login = async (user:User): Promise<void> => api.post('/login/', { user });
+export const login = async (user:User): Promise<void> => {
+  const response = await api.post('login/', user);
+};
 
 export const createUser = async (signUpData:SignupData): Promise<void|AxiosResponse> => {
   api.post('createuser/', signUpData).then((response) => {

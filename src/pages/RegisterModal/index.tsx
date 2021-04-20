@@ -3,7 +3,7 @@ import { MainDiv, OverlayDiv } from './styles';
 import { createUser } from '../../service/UserService';
 
 interface RegisterModalProps{
-    setIsRegisterModalOpen: (arg0: boolean) => void;
+    setIsRegisterModalOpen: (showModal: boolean) => void;
 }
 
 const RegisterModal: React.FC<RegisterModalProps> = (props: RegisterModalProps) => {
