@@ -20,7 +20,7 @@ export const LeftDiv = styled.div`
     width: 1000px;
 `;
 
-export const CardDiv = styled.div`
+export const RegistersDiv = styled.div`
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;

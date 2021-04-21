@@ -13,7 +13,7 @@ const LoginPage: React.FC = () => {
       {isSignUpModalOpen && <SignUpModal setIsSignUpModalOpen={setIsSignUpModalOpen} />}
       <MainDiv>
         <LoginCard setIsSignUpModalOpen={setIsSignUpModalOpen} />
-        <img src="imgs/people-connected-in-a-web.png" alt="fundo" />
+        <img src="imgs/people-connected-in-a-web.png" alt="pessoas conectadas por nós" />
       </MainDiv>
     </>
 

@@ -4,7 +4,7 @@ import { login } from '../../service/UserService';
 import { MainDiv } from './styles';
 
 interface LoginCardProps{
-    setIsSignUpModalOpen: (arg: boolean) => void;
+    setIsSignUpModalOpen: (signUpModalState: boolean) => void;
 }
 
 const LoginCard: React.FC<LoginCardProps> = (props: LoginCardProps) => {

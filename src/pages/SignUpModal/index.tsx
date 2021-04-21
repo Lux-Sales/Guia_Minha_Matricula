@@ -3,12 +3,12 @@ import { MainDiv, OverlayDiv } from './styles';
 import { createUser } from '../../service/UserService';
 
 interface SignUpModalProps{
-    setIsSignUpModalOpen: (showModal: boolean) => void;
+    setIsSignUpModalOpen: (signUpModalState: boolean) => void;
 }
 
 const SignUpModal: React.FC<SignUpModalProps> = (props: SignUpModalProps) => {
-  const [name, setName] = useState('');
-  const [lastName, setLastName] = useState('');
+  const [userName, setUserName] = useState('');
+  const [userLastName, setUserLastName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
@@ -28,9 +28,9 @@ const SignUpModal: React.FC<SignUpModalProps> = (props: SignUpModalProps) => {
         </header>
         <div>
           <label htmlFor="name">Nome</label>
-          <input name="name" type="input" placeholder="Nome" onChange={(e) => setName(e.target.value)} />
+          <input name="name" type="input" placeholder="Nome" onChange={(e) => setUserName(e.target.value)} />
           <label htmlFor="lastName">Sobrenome</label>
-          <input name="lastName" type="input" placeholder="Sobrenome" onChange={(e) => setLastName(e.target.value)} />
+          <input name="lastName" type="input" placeholder="Sobrenome" onChange={(e) => setUserLastName(e.target.value)} />
           <label htmlFor="email">Email Institucional</label>
           <input name="email" type="email" placeholder="Email" onChange={(e) => setEmail(e.target.value)} />
           <label htmlFor="password">Senha</label>
@@ -39,8 +39,8 @@ const SignUpModal: React.FC<SignUpModalProps> = (props: SignUpModalProps) => {
           <input type="password" name="confirmPassword" placeholder="Confirmar senha" onChange={(e) => setConfirmPassword(e.target.value)} />
           <button
             onClick={() => createUser({
-              first_name: name,
-              last_name: lastName,
+              first_name: userName,
+              last_name: userLastName,
               email,
               password,
             })}

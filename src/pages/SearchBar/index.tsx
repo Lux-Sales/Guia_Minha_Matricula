@@ -5,7 +5,7 @@ import { MainDiv, ResultsDiv } from './styles';
 const SearchBar: React.FC = () => {
   const [searchTerm, setSearchTerm] = useState('');
 
-  const disciplinas = [
+  const subjects = [
     'Orientação a Objetos',
     'Algoritmos e Programação de Computadores',
     'Cálculo 1',
@@ -21,7 +21,7 @@ const SearchBar: React.FC = () => {
   ];
 
   const dynamicSearch = () => (
-    disciplinas.filter((name) => name.toLowerCase().includes(searchTerm.toLowerCase()))
+    subjects.filter((name) => name.toLowerCase().includes(searchTerm.toLowerCase()))
   );
 
   return (

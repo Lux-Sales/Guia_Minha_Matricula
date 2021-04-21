@@ -4,7 +4,7 @@ import ProfessorRegister from '../ProfessorRegister';
 import SearchBar from '../SearchBar';
 import SubjectRegister from '../SubjectRegister';
 import UserNavBar from '../UserNavBar';
-import { MainDiv, CardDiv, LeftDiv } from './styles';
+import { MainDiv, RegistersDiv, LeftDiv } from './styles';
 
 const UserHome: React.FC = () => (
   <>
@@ -12,10 +12,10 @@ const UserHome: React.FC = () => (
     <MainDiv>
       <LeftDiv>
         <SearchBar />
-        <CardDiv>
+        <RegistersDiv>
           <SubjectRegister />
           <ProfessorRegister />
-        </CardDiv>
+        </RegistersDiv>
       </LeftDiv>
       <Feed />
     </MainDiv>

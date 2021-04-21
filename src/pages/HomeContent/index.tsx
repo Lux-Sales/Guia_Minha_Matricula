@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { Div, ButtonsDiv, MainDiv } from './styles';
 
 interface HomeContentProps{
-    setIsSignUpModalOpen: (arg: boolean) => void;
+    setIsSignUpModalOpen: (signUpModalState: boolean) => void;
 }
 
 const HomeContent: React.FC<HomeContentProps> = (props: HomeContentProps) => (
