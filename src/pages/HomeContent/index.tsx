@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { Div, ButtonsDiv, MainDiv } from './styles';
 
 interface HomeContentProps{
-    setIsRegisterModalOpen: (arg0: boolean) => void;
+    setIsSignUpModalOpen: (arg: boolean) => void;
 }
 
 const HomeContent: React.FC<HomeContentProps> = (props: HomeContentProps) => (
@@ -20,7 +20,7 @@ const HomeContent: React.FC<HomeContentProps> = (props: HomeContentProps) => (
           Nulla consequat massa quis enim.
         </p>
         <ButtonsDiv>
-          <button onClick={() => props.setIsRegisterModalOpen(true)}>Cadastrar</button>
+          <button onClick={() => props.setIsSignUpModalOpen(true)}>Cadastrar</button>
           <Link to="/sobre"><button type="button">Saiba Mais</button></Link>
         </ButtonsDiv>
       </Div>

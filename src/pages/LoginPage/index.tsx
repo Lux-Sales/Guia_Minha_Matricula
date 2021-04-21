@@ -1,18 +1,18 @@
 import React, { useState } from 'react';
 import LoginCard from '../LoginCard/index';
 import NavBar from '../NavBar';
-import RegisterModal from '../RegisterModal';
+import SignUpModal from '../SignUpModal';
 import { MainDiv } from './styles';
 
 const LoginPage: React.FC = () => {
-  const [isRegisterModalOpen, setIsRegisterModalOpen] = useState(false);
+  const [isSignUpModalOpen, setIsSignUpModalOpen] = useState(false);
 
   return (
     <>
       <NavBar />
-      {isRegisterModalOpen && <RegisterModal setIsRegisterModalOpen={setIsRegisterModalOpen} />}
+      {isSignUpModalOpen && <SignUpModal setIsSignUpModalOpen={setIsSignUpModalOpen} />}
       <MainDiv>
-        <LoginCard setIsRegisterModalOpen={setIsRegisterModalOpen} />
+        <LoginCard setIsSignUpModalOpen={setIsSignUpModalOpen} />
         <img src="imgs/people-connected-in-a-web.png" alt="fundo" />
       </MainDiv>
     </>

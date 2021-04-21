@@ -2,11 +2,11 @@ import React, { useState } from 'react';
 import { MainDiv, OverlayDiv } from './styles';
 import { createUser } from '../../service/UserService';
 
-interface RegisterModalProps{
-    setIsRegisterModalOpen: (showModal: boolean) => void;
+interface SignUpModalProps{
+    setIsSignUpModalOpen: (showModal: boolean) => void;
 }
 
-const RegisterModal: React.FC<RegisterModalProps> = (props: RegisterModalProps) => {
+const SignUpModal: React.FC<SignUpModalProps> = (props: SignUpModalProps) => {
   const [name, setName] = useState('');
   const [lastName, setLastName] = useState('');
   const [email, setEmail] = useState('');
@@ -22,7 +22,7 @@ const RegisterModal: React.FC<RegisterModalProps> = (props: RegisterModalProps) 
       <MainDiv>
         <header>
           <strong>Cadastre-se</strong>
-          <button onClick={() => props.setIsRegisterModalOpen(false)}>
+          <button onClick={() => props.setIsSignUpModalOpen(false)}>
             <img src="imgs/close.svg" alt="fechar" />
           </button>
         </header>
@@ -54,4 +54,4 @@ const RegisterModal: React.FC<RegisterModalProps> = (props: RegisterModalProps) 
   );
 };
 
-export default RegisterModal;
+export default SignUpModal;
