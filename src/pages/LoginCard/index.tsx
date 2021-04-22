@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { login } from '../../service/UserService';
 import { MainDiv } from './styles';
 
 interface LoginCardProps{
-    setIsRegisterModalOpen: (arg0: boolean) => void;
+    setIsSignUpModalOpen: (signUpModalState: boolean) => void;
 }
 
 const LoginCard: React.FC<LoginCardProps> = (props: LoginCardProps) => {
@@ -22,21 +23,23 @@ const LoginCard: React.FC<LoginCardProps> = (props: LoginCardProps) => {
           <input name="email" type="email" placeholder="Email" onChange={(e) => setEmail(e.target.value)} />
           <label htmlFor="password">Senha</label>
           <input type="password" name="password" placeholder="Senha" onChange={(e) => setPassword(e.target.value)} />
-          <button
-            onClick={() => login({
-              email,
-              password,
-            })}
-          >
-            Entrar
-          </button>
+          <Link to="/userhome">
+            <button
+              onClick={() => login({
+                email,
+                password,
+              })}
+            >
+              Entrar
+            </button>
+          </Link>
         </div>
 
         <div>
           <span> Esqueceu sua senha ? </span>
           <span
-            onClick={() => props.setIsRegisterModalOpen(true)}
-            onKeyDown={() => props.setIsRegisterModalOpen(true)}
+            onClick={() => props.setIsSignUpModalOpen(true)}
+            onKeyDown={() => props.setIsSignUpModalOpen(true)}
             role="button"
             tabIndex={0}
           >

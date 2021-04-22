@@ -2,17 +2,17 @@ import React, { useState } from 'react';
 import NavBar from '../NavBar';
 import HomeContent from '../HomeContent';
 import { MainDiv } from './styles';
-import RegisterModal from '../RegisterModal';
+import SignUpModal from '../SignUpModal';
 
 const HomePage: React.FC = () => {
-  const [isRegisterModalOpen, setIsRegisterModalOpen] = useState(false);
+  const [isSignUpModalOpen, setIsSignUpModalOpen] = useState(false);
 
   return (
     <>
       <NavBar />
-      {isRegisterModalOpen && <RegisterModal setIsRegisterModalOpen={setIsRegisterModalOpen} />}
+      {isSignUpModalOpen && <SignUpModal setIsSignUpModalOpen={setIsSignUpModalOpen} />}
       <MainDiv>
-        <HomeContent setIsRegisterModalOpen={setIsRegisterModalOpen} />
+        <HomeContent setIsSignUpModalOpen={setIsSignUpModalOpen} />
         <img src="imgs/designer_1.png" alt="fundo" />
       </MainDiv>
     </>

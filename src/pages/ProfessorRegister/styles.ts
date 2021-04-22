@@ -2,8 +2,8 @@ import { shade } from 'polished';
 import styled from 'styled-components';
 
 export const MainDiv = styled.div`
-    height: 380px;
-    width: 400px;
+    height: 220px;
+    width: 380px;
 
 
     text-align: center;
@@ -35,7 +35,7 @@ export const MainDiv = styled.div`
         color: #4953B8;
     }
 
-    div:first-of-type{
+    div{
         width: 100%;
 
         display: flex;
@@ -72,10 +72,6 @@ export const MainDiv = styled.div`
         padding: 3px;
     }
 
-    a{
-        width: 100%;
-    }
-
     button{
         width: 100%;
         height: 50px;
@@ -102,22 +98,4 @@ export const MainDiv = styled.div`
 
     }
 
-    div:last-of-type{
-        width: 100%;
-
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        justify-content: space-evenly;
-    }
-
-    span{
-        color: #4953B8;
-        &:hover{
-            color: ${shade(0.4, '#4953B8')}
-        }
-
-        cursor: pointer;
-        outline: none;
-    }
 `;

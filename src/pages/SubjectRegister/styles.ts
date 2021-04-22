@@ -2,8 +2,8 @@ import { shade } from 'polished';
 import styled from 'styled-components';
 
 export const MainDiv = styled.div`
-    height: 380px;
-    width: 400px;
+    height: 270px;
+    width: 380px;
 
 
     text-align: center;
@@ -11,6 +11,7 @@ export const MainDiv = styled.div`
     box-shadow: 0 2px 4px rgba(0, 0, 0, .1),0 8px 16px rgba(0, 0, 0, .1);
 
     background-color: #fff;
+    /* background-color: #F2F3F5; */
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
@@ -35,13 +36,21 @@ export const MainDiv = styled.div`
         color: #4953B8;
     }
 
-    div:first-of-type{
+    div{
         width: 100%;
 
         display: flex;
         flex-direction: column;
         justify-content: space-evenly;
         align-items: center;
+    }
+
+    div div{
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+        grid-row-gap: 0.5rem;
+
+        margin-top: 0.5rem;
     }
 
     input{
@@ -72,10 +81,6 @@ export const MainDiv = styled.div`
         padding: 3px;
     }
 
-    a{
-        width: 100%;
-    }
-
     button{
         width: 100%;
         height: 50px;
@@ -102,22 +107,4 @@ export const MainDiv = styled.div`
 
     }
 
-    div:last-of-type{
-        width: 100%;
-
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        justify-content: space-evenly;
-    }
-
-    span{
-        color: #4953B8;
-        &:hover{
-            color: ${shade(0.4, '#4953B8')}
-        }
-
-        cursor: pointer;
-        outline: none;
-    }
 `;

@@ -2,13 +2,13 @@ import React, { useState } from 'react';
 import { MainDiv, OverlayDiv } from './styles';
 import { createUser } from '../../service/UserService';
 
-interface RegisterModalProps{
-    setIsRegisterModalOpen: (showModal: boolean) => void;
+interface SignUpModalProps{
+    setIsSignUpModalOpen: (signUpModalState: boolean) => void;
 }
 
-const RegisterModal: React.FC<RegisterModalProps> = (props: RegisterModalProps) => {
-  const [name, setName] = useState('');
-  const [lastName, setLastName] = useState('');
+const SignUpModal: React.FC<SignUpModalProps> = (props: SignUpModalProps) => {
+  const [userName, setUserName] = useState('');
+  const [userLastName, setUserLastName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
@@ -22,15 +22,15 @@ const RegisterModal: React.FC<RegisterModalProps> = (props: RegisterModalProps) 
       <MainDiv>
         <header>
           <strong>Cadastre-se</strong>
-          <button onClick={() => props.setIsRegisterModalOpen(false)}>
+          <button onClick={() => props.setIsSignUpModalOpen(false)}>
             <img src="imgs/close.svg" alt="fechar" />
           </button>
         </header>
         <div>
           <label htmlFor="name">Nome</label>
-          <input name="name" type="input" placeholder="Nome" onChange={(e) => setName(e.target.value)} />
+          <input name="name" type="input" placeholder="Nome" onChange={(e) => setUserName(e.target.value)} />
           <label htmlFor="lastName">Sobrenome</label>
-          <input name="lastName" type="input" placeholder="Sobrenome" onChange={(e) => setLastName(e.target.value)} />
+          <input name="lastName" type="input" placeholder="Sobrenome" onChange={(e) => setUserLastName(e.target.value)} />
           <label htmlFor="email">Email Institucional</label>
           <input name="email" type="email" placeholder="Email" onChange={(e) => setEmail(e.target.value)} />
           <label htmlFor="password">Senha</label>
@@ -39,8 +39,8 @@ const RegisterModal: React.FC<RegisterModalProps> = (props: RegisterModalProps) 
           <input type="password" name="confirmPassword" placeholder="Confirmar senha" onChange={(e) => setConfirmPassword(e.target.value)} />
           <button
             onClick={() => createUser({
-              first_name: name,
-              last_name: lastName,
+              first_name: userName,
+              last_name: userLastName,
               email,
               password,
             })}
@@ -54,4 +54,4 @@ const RegisterModal: React.FC<RegisterModalProps> = (props: RegisterModalProps) 
   );
 };
 
-export default RegisterModal;
+export default SignUpModal;
