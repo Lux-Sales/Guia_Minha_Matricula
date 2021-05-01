@@ -1,34 +1,55 @@
 import styled from 'styled-components';
 
 export const MainDiv = styled.div`
+    margin-top: 3rem;
+
     display: flex;
     justify-content: space-around;
     align-items:flex-start;
+
     img{
-    height: 700px;
-    box-shadow: 0 2px 4px #000000,0 8px 16px rgba(0, 0, 0, .1);
+        height: 700px;
+        box-shadow: 0 2px 4px #000000,0 8px 16px rgba(0, 0, 0, .1);
     }
-    `;
+`;
 
 export const RightDiv = styled.div`
-    margin-left: 0px;
     display: flex;
     flex-direction: column;
-    height: 700px;
-    h1{
-        margin: 0px 0px 12px 35px;
+    justify-content:space-around;
+
+    height: 600px;
+
+`;
+
+export const HeaderInfo = styled.div`
+    height: 140px;
+    width: 800px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    font-family: Roboto, sans-serif;
+
+    color: #142634;
+
+    header{
         font-size: 2.25rem;
         font-weight: 700;
     }
+
     p{
-        margin: 0px 0px 0px 35px;
-        margin-bottom: 5px;
         font-size: 1.1rem;
     }
-    div{
-        margin: 20px 0px 20px 20px;
-        display: flex;
-        width: 300px;
-    }
 
+`;
+
+export const CardsContainer = styled.div`
+    width: 60rem;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    grid-gap: 2rem;
 `;
