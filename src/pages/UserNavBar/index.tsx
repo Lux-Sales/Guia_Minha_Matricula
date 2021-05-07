@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Header, Div } from './styles';
+import { Header, Div, ButtonDiv } from './styles';
 
 const UserNavBar: React.FC = () => (
   <Header>
@@ -9,13 +9,17 @@ const UserNavBar: React.FC = () => (
       <Link to="/userhome"><span>Sobre</span></Link>
       <Link to="/Configuration-Password"><span>Configurações</span></Link>
     </Div>
-    <button type="button">
-      <div>
-        <p>Olá,</p>
-        <strong>User</strong>
-      </div>
-      <img src="imgs/arrow-down.png" alt="seta pra baixo" />
-    </button>
+    <ButtonDiv>
+      <button type="button">
+        <div>
+          <p>Olá,</p>
+          <strong>User</strong>
+        </div>
+      </button>
+      <button>
+        sair
+      </button>
+    </ButtonDiv>
   </Header>
 );
 

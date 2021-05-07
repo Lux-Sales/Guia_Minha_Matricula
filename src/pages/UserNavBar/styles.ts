@@ -14,8 +14,7 @@ export const Header = styled.header`
 
     width: 100%;
 
-
-    button{
+    button:first-of-type{
         width: 140px;
         height: 55px;
 
@@ -26,7 +25,7 @@ export const Header = styled.header`
 
         display: flex;
         flex-direction: row;
-        justify-content: space-around;
+        justify-content: flex-start;
         align-items: center;
 
         padding-left: 10px;
@@ -98,5 +97,38 @@ export const Div = styled.div`
         height: 60px;
 
         cursor: pointer;
+    }
+`;
+
+export const ButtonDiv = styled.div`
+    display: flex;
+    justify-content: space-between;
+    align-items:center;
+
+    button:last-of-type {
+        width: 100px;
+        height: 55px;
+
+        color: #fff;
+        cursor: pointer;
+        background-color:#ff2d00;
+
+        outline: none;
+
+        border: 0;
+        border-radius: 10px;
+        
+        font-size: 1rem;
+
+        text-transform: uppercase;
+
+        transition: 0.2s;
+
+        font-weight: 500;
+        font-family: 'Montserrat', sans-serif;
+        &:hover{
+            background-color:${shade(0.2, '#ff2d00')}
+        }
+ 
     }
 `;
