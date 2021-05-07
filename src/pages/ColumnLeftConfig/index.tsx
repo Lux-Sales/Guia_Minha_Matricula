@@ -14,7 +14,7 @@ const ColumnLeftConfig : React.FC = () => (
         <div>
           <StyledLink to="/Configuration-Password">
             <FcLock />
-            alterar senha
+            Alterar senha
           </StyledLink>
         </div>
       </li>
@@ -22,7 +22,7 @@ const ColumnLeftConfig : React.FC = () => (
         <div>
           <StyledLink to="/Configuration-NickName">
             <FcBusinesswoman />
-            alterar seu apelido
+            Alterar seu apelido
           </StyledLink>
         </div>
       </li>
@@ -30,7 +30,7 @@ const ColumnLeftConfig : React.FC = () => (
         <div>
           <StyledLink to="/Configuration-DeleteCont">
             <FcFullTrash />
-            delete sua conta
+            Delete sua conta
           </StyledLink>
         </div>
       </li>

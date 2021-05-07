@@ -23,7 +23,7 @@ const ChangePasswordCard: React.FC = () => (
     </label>
 
     <button>
-      Subimeter
+      Submeter
     </button>
 
   </MainDivInherited>
