@@ -43,7 +43,7 @@ export const Header = styled.header`
 `;
 
 export const Div = styled.div`
-    width: 650px;
+    width: 450px;
 
     display: flex;
     justify-content:space-between;

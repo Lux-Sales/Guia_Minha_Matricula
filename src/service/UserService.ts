@@ -17,6 +17,7 @@ interface SignupData{
 
 export const login = async (user:User): Promise<void> => {
   const response = await api.post('login/', user);
+  return response.data;
 };
 
 export const createUser = async (signUpData:SignupData): Promise<void|AxiosResponse> => {

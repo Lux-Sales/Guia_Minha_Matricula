@@ -1,8 +1,10 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
+import { TokenContext } from '../../contexts/TokenContext';
 import { MainDiv } from './styles';
 
 const ProfessorRegister: React.FC = () => {
   const [professorName, setProfessorName] = useState('');
+  const { token } = useContext(TokenContext);
 
   return (
     <>
@@ -14,7 +16,7 @@ const ProfessorRegister: React.FC = () => {
         <div>
           <label htmlFor="professorName">Nome do Docente</label>
           <input name="professorName" onChange={(e) => setProfessorName(e.target.value)} />
-          <button>
+          <button onClick={() => console.log(token)}>
             Cadastrar
           </button>
         </div>

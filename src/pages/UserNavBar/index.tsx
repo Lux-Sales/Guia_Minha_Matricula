@@ -6,7 +6,6 @@ const UserNavBar: React.FC = () => (
   <Header>
     <Div>
       <Link to="/userhome"><img src="imgs/logo.png" alt="logo" /></Link>
-      <Link to="/userhome"><span>Sobre</span></Link>
       <Link to="/Configuration-Password"><span>Configurações</span></Link>
     </Div>
     <ButtonDiv>

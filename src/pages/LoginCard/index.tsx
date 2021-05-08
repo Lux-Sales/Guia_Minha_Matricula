@@ -1,5 +1,6 @@
-import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import React, { useContext, useState } from 'react';
+import { Link, useHistory } from 'react-router-dom';
+import { TokenContext } from '../../contexts/TokenContext';
 import { login } from '../../service/UserService';
 import { MainDiv } from './styles';
 
@@ -10,6 +11,28 @@ interface LoginCardProps{
 const LoginCard: React.FC<LoginCardProps> = (props: LoginCardProps) => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const { token, updateToken } = useContext(TokenContext);
+  let obj;
+
+  const history = useHistory();
+
+  const handleClick = async () => {
+    updateToken(await login({
+      email,
+      password,
+    }));
+    console.log(token);
+    history.push('/userhome');
+    // obj = await login({
+    //   email,
+    //   password,
+    // }).then((result) => {
+    //   updateToken(result);
+    // }).then(() => {
+    //   console.log(token);
+    //   history.push('/userhome');
+    // });
+  };
 
   return (
     <>
@@ -23,16 +46,13 @@ const LoginCard: React.FC<LoginCardProps> = (props: LoginCardProps) => {
           <input name="email" type="email" placeholder="Email" onChange={(e) => setEmail(e.target.value)} />
           <label htmlFor="password">Senha</label>
           <input type="password" name="password" placeholder="Senha" onChange={(e) => setPassword(e.target.value)} />
-          <Link to="/userhome">
-            <button
-              onClick={() => login({
-                email,
-                password,
-              })}
-            >
-              Entrar
-            </button>
-          </Link>
+          {/* <Link to="/userhome"> */}
+          <button
+            onClick={handleClick}
+          >
+            Entrar
+          </button>
+          {/* </Link> */}
         </div>
 
         <div>
