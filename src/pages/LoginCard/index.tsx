@@ -1,7 +1,7 @@
 import React, { useContext, useState } from 'react';
 import { Link, useHistory } from 'react-router-dom';
 import { TokenContext } from '../../contexts/TokenContext';
-import { login } from '../../service/UserService';
+import { login, failedLoginMessage } from '../../service/UserService';
 import { MainDiv } from './styles';
 
 interface LoginCardProps{
@@ -11,18 +11,28 @@ interface LoginCardProps{
 const LoginCard: React.FC<LoginCardProps> = (props: LoginCardProps) => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const { token, updateToken } = useContext(TokenContext);
+  const { token, updateToken, authenticateUser } = useContext(TokenContext);
   let obj;
 
   const history = useHistory();
 
   const handleClick = async () => {
-    updateToken(await login({
+    // updateToken(await login({
+    //   email,
+    //   password,
+    // }));
+    // console.log(token);
+    // authenticateUser();
+    // history.push('/userhome');
+    login({
       email,
       password,
-    }));
-    console.log(token);
-    history.push('/userhome');
+    }).then((response) => {
+      updateToken(response);
+      console.log(token);
+      authenticateUser();
+      history.push('/userhome');
+    }).catch((e) => failedLoginMessage());
     // obj = await login({
     //   email,
     //   password,
