@@ -3,7 +3,7 @@ import { AxiosResponse } from 'axios';
 import Swal from 'sweetalert2';
 import api from './API';
 
-interface User{
+export interface User{
     email:string,
     password:string
 }
@@ -15,8 +15,14 @@ interface SignupData{
     password:string,
 }
 
-export const login = async (user:User): Promise<void> => {
-  const response = await api.post('login/', user);
+interface JWToken{
+  refresh: string,
+  access: string
+}
+
+export const login = async (user:User): Promise<JWToken> => {
+  const response = await api.post<JWToken>('login/', user);
+  return response.data;
 };
 
 export const createUser = async (signUpData:SignupData): Promise<void|AxiosResponse> => {

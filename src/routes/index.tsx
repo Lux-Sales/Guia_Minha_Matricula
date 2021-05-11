@@ -19,5 +19,4 @@ const Routes: React.FC = () => (
     <Route exact path="/Configuration-NickName" component={ConfigurationNicknamePage} />
   </Switch>
 );
-
 export default Routes;

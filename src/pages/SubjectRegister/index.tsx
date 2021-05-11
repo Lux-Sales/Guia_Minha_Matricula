@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { MainDiv } from './styles';
+import { addSubject } from '../../service/SubjectService';
 
 const SubjectRegister: React.FC = () => {
   const [subjectName, setSubjectName] = useState('');
@@ -19,7 +20,18 @@ const SubjectRegister: React.FC = () => {
             <label htmlFor="subjectId">Código da Disciplina</label>
             <input name="subjectId" onChange={(e) => setSubjectId(e.target.value)} />
           </div>
-          <button>
+          <button onClick={async () => {
+            const subject = {
+              name: subjectName,
+              registerID: subjectId,
+            };
+            try {
+              const response = await addSubject(subject);
+            } catch (err) {
+              console.log(err);
+            }
+          }}
+          >
             Cadastrar
           </button>
         </div>
