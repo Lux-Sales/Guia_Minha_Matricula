@@ -41,3 +41,12 @@ export const createUser = async (signUpData:SignupData): Promise<void|AxiosRespo
     }));
   });
 };
+
+export const failedLoginMessage = () => {
+  Swal.fire({
+    title: 'Oops!',
+    text: 'Preencha os campos corretamente',
+    icon: 'error',
+    confirmButtonText: 'Prosseguir',
+  });
+};

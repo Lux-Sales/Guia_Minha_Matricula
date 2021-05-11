@@ -7,7 +7,6 @@ const NavBar: React.FC = () => (
     <Div>
       <Link to="/"><img src="imgs/logo.png" alt="logo" /></Link>
       <Link to="/sobre"><span>Sobre</span></Link>
-      <span>Contato</span>
     </Div>
     <Link to="/login">
       <button type="button">Login</button>

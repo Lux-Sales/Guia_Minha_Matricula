@@ -20,16 +20,11 @@ const SubjectRegister: React.FC = () => {
             <label htmlFor="subjectId">Código da Disciplina</label>
             <input name="subjectId" onChange={(e) => setSubjectId(e.target.value)} />
           </div>
-          <button onClick={async () => {
-            const subject = {
+          <button onClick={() => {
+            addSubject({
               name: subjectName,
               registerID: subjectId,
-            };
-            try {
-              const response = await addSubject(subject);
-            } catch (err) {
-              console.log(err);
-            }
+            });
           }}
           >
             Cadastrar

@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { addTeacher } from '../../service/SubjectService';
 import { MainDiv } from './styles';
 
 const ProfessorRegister: React.FC = () => {
@@ -14,7 +15,7 @@ const ProfessorRegister: React.FC = () => {
         <div>
           <label htmlFor="professorName">Nome do Docente</label>
           <input name="professorName" onChange={(e) => setProfessorName(e.target.value)} />
-          <button>
+          <button onClick={() => addTeacher({ name: professorName })}>
             Cadastrar
           </button>
         </div>
