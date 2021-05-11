@@ -70,7 +70,7 @@ export const Header = styled.header`
 `;
 
 export const Div = styled.div`
-    width: 650px;
+    width: 500px;
 
     display: flex;
     justify-content:space-between;
@@ -117,7 +117,7 @@ export const ButtonDiv = styled.div`
 
         border: 0;
         border-radius: 10px;
-        
+
         font-size: 1rem;
 
         text-transform: uppercase;
@@ -129,6 +129,6 @@ export const ButtonDiv = styled.div`
         &:hover{
             background-color:${shade(0.2, '#ff2d00')}
         }
- 
+
     }
 `;

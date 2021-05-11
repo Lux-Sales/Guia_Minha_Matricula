@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
-import { login } from '../../service/UserService';
+import { useHistory } from 'react-router-dom';
+import { failedLoginMessage, login } from '../../service/UserService';
 import { MainDiv } from './styles';
 
 interface LoginCardProps{
@@ -10,6 +10,7 @@ interface LoginCardProps{
 const LoginCard: React.FC<LoginCardProps> = (props: LoginCardProps) => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const history = useHistory();
 
   return (
     <>
@@ -23,16 +24,16 @@ const LoginCard: React.FC<LoginCardProps> = (props: LoginCardProps) => {
           <input name="email" type="email" placeholder="Email" onChange={(e) => setEmail(e.target.value)} />
           <label htmlFor="password">Senha</label>
           <input type="password" name="password" placeholder="Senha" onChange={(e) => setPassword(e.target.value)} />
-          <Link to="/userhome">
-            <button
-              onClick={() => login({
-                email,
-                password,
-              })}
-            >
-              Entrar
-            </button>
-          </Link>
+          <button
+            onClick={() => login({
+              email,
+              password,
+            }).then(() => {
+              history.push('/userhome');
+            }).catch((e) => failedLoginMessage())}
+          >
+            Entrar
+          </button>
         </div>
 
         <div>
