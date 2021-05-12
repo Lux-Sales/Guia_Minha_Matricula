@@ -24,11 +24,47 @@ export const MainDiv = styled.div`
 `;
 
 export const FeedDiv = styled.div`
-    height: 75vh;
+    max-height: 75vh;
     width: 100%;
+
+    overflow-y: scroll;
 
     border-radius: 5px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, .1),0 8px 16px rgba(0, 0, 0, .1);
 
     background-color: #F2F3F5;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+`;
+
+export const CommentDiv = styled.div`
+    margin: 0.5rem;
+
+    width: 95%;
+
+    border: 1px solid #C1B7B7;
+    border-radius: 10px;
+
+    padding: 10px;
+
+    p:first-of-type{
+        display: inline;
+        font-style: italic;
+    }
+
+    h2{
+        color: #282727;
+    }
+
+    h3{
+        display: inline;
+    }
+
+    p:last-of-type{
+        margin-top: 0.3rem;
+        word-wrap: break-word;
+    }
 `;
