@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { addTeacher } from '../../service/SubjectService';
+import { addTeacher } from '../../service/DataService';
 import { MainDiv } from './styles';
 
 const ProfessorRegister: React.FC = () => {

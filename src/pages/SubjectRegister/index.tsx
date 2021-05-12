@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { MainDiv } from './styles';
-import { addSubject } from '../../service/SubjectService';
+import { addSubject } from '../../service/DataService';
 
 const SubjectRegister: React.FC = () => {
   const [subjectName, setSubjectName] = useState('');

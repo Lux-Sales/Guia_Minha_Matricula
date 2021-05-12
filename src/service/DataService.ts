@@ -1,3 +1,4 @@
+/* eslint-disable consistent-return */
 import Swal from 'sweetalert2';
 import api from './API';
 
@@ -8,6 +9,17 @@ export interface Subject{
 
 export interface Teacher{
     name: string,
+}
+
+export interface Comment{
+    comment:string,
+    teacher:Teacher,
+    subject:Subject,
+    userID:string
+}
+
+export interface GetComment{
+    results: Comment[]
 }
 
 export const getSubjects = async () => {
@@ -39,19 +51,30 @@ export const getTeachers = async () => {
 };
 
 export const addTeacher = async (teacher:Teacher) => {
-  const response = await api.post('teachers/', teacher).then((res) => {
+  try {
+    const response = await api.post('teachers/', teacher);
     Swal.fire({
       title: 'Docente cadastrado!',
       icon: 'success',
       confirmButtonText: 'Prosseguir',
     });
-  }).catch((e) => {
+    return response.data;
+  } catch (err) {
     (Swal.fire({
       title: 'Oops!',
       text: 'Algo deu errado, tente novamente mais tarde',
       icon: 'error',
       confirmButtonText: 'Prosseguir',
     }));
-  });
+  }
+};
+
+export const getComments = async (): Promise<Comment[]> => {
+  const response = await api.get('/comments');
+  return response.data.results;
+};
+
+export const addComment = async (comment:Comment) => {
+  const response = await api.post('comments/', comment);
   return response;
 };
