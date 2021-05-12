@@ -1,6 +1,6 @@
 /* eslint-disable no-underscore-dangle */
 import React, { useState, useEffect } from 'react';
-import { MainDiv, FeedDiv } from './styles';
+import { MainDiv, FeedDiv, CommentDiv } from './styles';
 import { getComments, Comment } from '../../service/DataService';
 
 const Feed: React.FC = () => {
@@ -19,18 +19,12 @@ const Feed: React.FC = () => {
       </header>
       <FeedDiv>
         {comments.map(((comment:Comment) => (
-          <>
-            <span>
-              {comment.comment}
-              , -
-              {' '}
-              {comment.subject.name}
-              ,
-              {' '}
-              {comment.teacher.name}
-            </span>
-            <br />
-          </>
+          <CommentDiv>
+            <h2>{comment.subject.name}</h2>
+            <p>ministrada por  </p>
+            <h3>{comment.teacher.name}</h3>
+            <p>{comment.comment}</p>
+          </CommentDiv>
         )))}
       </FeedDiv>
     </MainDiv>
