@@ -45,7 +45,7 @@ export const createUser = async (signUpData:SignupData): Promise<void|AxiosRespo
 export const failedLoginMessage = () => {
   Swal.fire({
     title: 'Oops!',
-    text: 'Preencha os campos corretamente',
+    text: 'Email ou senha incorreto',
     icon: 'error',
     confirmButtonText: 'Prosseguir',
   });
