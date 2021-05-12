@@ -18,16 +18,19 @@ const Feed: React.FC = () => {
         <strong>Comentários Mais Recentes</strong>
       </header>
       <FeedDiv>
-        {comments.map(((comment:Comment) => comment != null && (
-          <span>
-            {comment.comment}
-            , -
-            {' '}
-            {comment.subject.name}
-            ,
-            {' '}
-            {comment.teacher.name}
-          </span>
+        {comments.map(((comment:Comment) => (
+          <>
+            <span>
+              {comment.comment}
+              , -
+              {' '}
+              {comment.subject.name}
+              ,
+              {' '}
+              {comment.teacher.name}
+            </span>
+            <br />
+          </>
         )))}
       </FeedDiv>
     </MainDiv>

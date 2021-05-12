@@ -18,10 +18,6 @@ export interface Comment{
     userID:string
 }
 
-export interface GetComment{
-    results: Comment[]
-}
-
 export const getSubjects = async () => {
   const response = await api.get('/subjects');
   return response;
@@ -71,7 +67,7 @@ export const addTeacher = async (teacher:Teacher) => {
 
 export const getComments = async (): Promise<Comment[]> => {
   const response = await api.get('/comments');
-  return response.data.results;
+  return response.data;
 };
 
 export const addComment = async (comment:Comment) => {
