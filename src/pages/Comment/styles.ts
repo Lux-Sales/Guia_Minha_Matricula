@@ -19,6 +19,22 @@ export const MainDiv = styled.div`
     }
 
     h2{
+        display: inline;
         font-size: 1.2rem;
+
+        margin-right: 0.2rem;
+    }
+
+    p{
+        display: inline;
+        font-style: italic;
+    }
+
+    h2:last-of-type{
+        margin-left: 0.2rem;
+    }
+
+    span{
+        margin-top: 0.3rem;
     }
 `;

@@ -2,7 +2,7 @@ import { shade } from 'polished';
 import styled from 'styled-components';
 
 export const MainDiv = styled.div`
-    height: 40px;
+    /* height: 40px;
     width: 100%;
 
     background-color: #fff;
@@ -22,5 +22,5 @@ export const MainDiv = styled.div`
 
     &:hover{
         background-color: ${shade(0.04, '#fff')}
-    }
+    } */
 `;

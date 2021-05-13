@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Subject } from '../../service/DataService';
 import { MainDiv } from './styles';
 import CommentForm from '../CommentForm';
+import SubjectName from '../SubjectName';
 
 interface SearchBarResultProps{
     subject: Subject;
@@ -13,13 +14,11 @@ const SearchBarResult: React.FC<SearchBarResultProps> = (props: SearchBarResultP
   const [showModal, setShowModal] = useState(false);
 
   return (
-    <MainDiv onClick={() => { setShowModal(true); }}>
-      <span>
-        {subject.name}
-      </span>
+    <MainDiv>
       <div>
         {showModal && <CommentForm setShowModal={setShowModal} subject={subject} userID={userID} />}
       </div>
+      <SubjectName subject={subject} setShowModal={setShowModal} userID={userID} />
     </MainDiv>
   );
 };
