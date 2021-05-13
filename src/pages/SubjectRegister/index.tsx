@@ -15,10 +15,10 @@ const SubjectRegister: React.FC = () => {
 
         <div>
           <label htmlFor="subjectName">Nome da Disciplina</label>
-          <input name="subjectName" onChange={(e) => setSubjectName(e.target.value)} />
+          <input name="subjectName" onChange={(e) => setSubjectName(e.target.value.toLowerCase())} />
           <div>
             <label htmlFor="subjectId">Código da Disciplina</label>
-            <input name="subjectId" onChange={(e) => setSubjectId(e.target.value)} />
+            <input name="subjectId" onChange={(e) => setSubjectId(e.target.value.toLowerCase())} />
           </div>
           <button onClick={() => {
             addSubject({

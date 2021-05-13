@@ -14,7 +14,7 @@ const ProfessorRegister: React.FC = () => {
 
         <div>
           <label htmlFor="professorName">Nome do Docente</label>
-          <input name="professorName" onChange={(e) => setProfessorName(e.target.value)} />
+          <input name="professorName" onChange={(e) => setProfessorName(e.target.value.toLowerCase())} />
           <button onClick={() => addTeacher({
             id: '',
             name: professorName,

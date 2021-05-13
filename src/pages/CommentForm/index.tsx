@@ -68,7 +68,7 @@ const CommentForm: React.FC<CommentFormProps> = (props:CommentFormProps) => {
             type="text"
             id="teacherLabel"
             onChange={(e) => {
-              setTeacher(e.target.value);
+              setTeacher(e.target.value.toLowerCase());
             }}
           />
         </TeacherDiv>
