@@ -3,10 +3,9 @@ import styled from 'styled-components';
 
 export const MainDiv = styled.div`
     width: 42rem;
-    /* height: 20rem; */
-
-    margin-top: 1rem;
-
+    height: auto;
+    margin-left: 250px;
+    margin-top: 100px;
     border-radius: 10px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, .1),0 8px 16px rgba(0, 0, 0, .1);
 
@@ -15,16 +14,20 @@ export const MainDiv = styled.div`
     padding: 1rem;
 
     header{
+        display: flex;
         width: 100%;
-
         color: #fff;
         font-size: 1.7rem;
         font-family: Roboto, sans-serif;
-
-        /* color: #4953B8;; */
-
         margin-bottom: 1rem;
         padding-left: 0.5rem;
+        button{
+            margin-left: 300px;
+            height: 30px;
+            width: 50px;
+            background: transparent;
+            cursor: pointer;
+        }
     }
 
     div strong{
@@ -93,4 +96,12 @@ export const CommentFormField = styled.div`
 
     }
 
+`;
+
+export const HiperDiv = styled.div`
+    position:absolute;
+    width: 100%;
+    height: 125%;
+    top: 0px;
+    background: rgba(0, 0, 0, 0.644);
 `;

@@ -22,6 +22,7 @@ const SubjectRegister: React.FC = () => {
           </div>
           <button onClick={() => {
             addSubject({
+              id: '',
               name: subjectName,
               registerID: subjectId,
             });

@@ -1,35 +1,29 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import SearchBarResult from '../SearchBarResult';
 import { MainDiv, ResultsDiv } from './styles';
+import { Subject, getSubjects } from '../../service/DataService';
 
 const SearchBar: React.FC = () => {
   const [searchTerm, setSearchTerm] = useState('');
+  const [subjects, setSubjects] = useState<Subject[]>([]);
 
-  const subjects = [
-    'Orientação a Objetos',
-    'Algoritmos e Programação de Computadores',
-    'Cálculo 1',
-    'Cálculo 2',
-    'Cálculo 3',
-    'Engenharia e Ambiente',
-    'Introdução a Engenharia',
-    'Teoria de Eletrônica Digital',
-    'Matemática Discreta 1',
-    'Matemática Discreta 2',
-    'Métodos de Desenvolvimento de Software',
-    'Compiladores',
-  ];
+  const fetchSubjects = async () => {
+    const _subjects = await getSubjects();
+    setSubjects(_subjects);
+  };
+  useEffect(() => {
+    fetchSubjects();
+  }, []);
 
   const dynamicSearch = () => (
-    subjects.filter((name) => name.toLowerCase().includes(searchTerm.toLowerCase()))
-  );
+    subjects.filter(((subject) => subject.name.toLowerCase().includes(searchTerm.toLowerCase()))));
 
   return (
     <>
       <MainDiv>
         <input type="text" placeholder="Pesquise uma Disciplina" onChange={(e) => setSearchTerm(e.target.value)} />
         <ResultsDiv>
-          {dynamicSearch().map((name) => <SearchBarResult subjectName={name} />)}
+          {dynamicSearch().map((subject) => <SearchBarResult subject={subject} />)}
         </ResultsDiv>
       </MainDiv>
     </>
