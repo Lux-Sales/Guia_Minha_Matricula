@@ -79,6 +79,21 @@ export const getComments = async (): Promise<Comment[]> => {
 };
 
 export const addComment = async (comment:AddComment) => {
-  const response = await api.post('comments/', comment);
-  return response;
+  try {
+    const response = await api.post('comments/', comment);
+    Swal.fire({
+      title: 'Cadastrado',
+      text: 'Comentário registrado',
+      icon: 'success',
+      confirmButtonText: 'Prosseguir',
+    });
+    return response;
+  } catch (e) {
+    Swal.fire({
+      title: 'Oops!Algo deu errado.',
+      text: 'Certifique-se de preencher o professor, se o erro persistir, o mesmo não está cadastrado.',
+      icon: 'error',
+      confirmButtonText: 'Prosseguir',
+    });
+  }
 };
