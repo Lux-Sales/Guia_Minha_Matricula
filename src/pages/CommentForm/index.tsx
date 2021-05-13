@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import { CommentFormField, MainDiv, HiperDiv } from './styles';
+import {
+  CommentFormField, MainDiv, HiperDiv, TeacherDiv, FeedDiv,
+} from './styles';
 import {
   getComments, Comment, Subject, addComment, getTeachers,
 } from '../../service/DataService';
@@ -34,6 +36,7 @@ const CommentForm: React.FC<CommentFormProps> = (props:CommentFormProps) => {
 
   const postComment = (comment:AddComment) => {
     addComment(comment);
+    fetchComments();
   };
 
   const findTeacher = async () => {
@@ -52,10 +55,15 @@ const CommentForm: React.FC<CommentFormProps> = (props:CommentFormProps) => {
   }, [teacher]);
 
   return (
-    <HiperDiv onClick={() => props.setShowModal(false)}>
+    <HiperDiv>
       <MainDiv>
         <header>
           <strong>Relate sua Experiência!</strong>
+          <button onClick={() => props.setShowModal(false)}>
+            <img src="imgs/close.svg" alt="fechar" />
+          </button>
+        </header>
+        <TeacherDiv>
           <label htmlFor="teacherLabel"> Professor: </label>
           <input
             type="text"
@@ -64,10 +72,7 @@ const CommentForm: React.FC<CommentFormProps> = (props:CommentFormProps) => {
               setTeacher(e.target.value);
             }}
           />
-          <button onClick={() => props.setShowModal(false)}>
-            <img src="imgs/close.svg" alt="fechar" />
-          </button>
-        </header>
+        </TeacherDiv>
         <CommentFormField>
           <textarea rows={8} placeholder="Escreva aqui!" onChange={(e) => setText(e.target.value)} />
           <button
@@ -92,9 +97,9 @@ const CommentForm: React.FC<CommentFormProps> = (props:CommentFormProps) => {
         <div>
           <strong>Relatos</strong>
         </div>
-        <div>
-          {comments.map((com) => com.subject.id === subject.id && <CommentComponent name={com.user.name} text={com.comment} />)}
-        </div>
+        <FeedDiv>
+          {comments.map((com) => com.subject.id === subject.id && <CommentComponent name={com.user.name} text={com.comment} teacher={com.teacher.name} />)}
+        </FeedDiv>
       </MainDiv>
     </HiperDiv>
   );
