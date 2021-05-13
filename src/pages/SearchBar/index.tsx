@@ -3,9 +3,14 @@ import SearchBarResult from '../SearchBarResult';
 import { MainDiv, ResultsDiv } from './styles';
 import { Subject, getSubjects } from '../../service/DataService';
 
-const SearchBar: React.FC = () => {
+interface SearchBarProps{
+    userID: string
+}
+
+const SearchBar: React.FC<SearchBarProps> = (props:SearchBarProps) => {
   const [searchTerm, setSearchTerm] = useState('');
   const [subjects, setSubjects] = useState<Subject[]>([]);
+  const { userID } = props;
 
   const fetchSubjects = async () => {
     const _subjects = await getSubjects();
@@ -23,7 +28,7 @@ const SearchBar: React.FC = () => {
       <MainDiv>
         <input type="text" placeholder="Pesquise uma Disciplina" onChange={(e) => setSearchTerm(e.target.value)} />
         <ResultsDiv>
-          {dynamicSearch().map((subject) => <SearchBarResult subject={subject} />)}
+          {dynamicSearch().map((subject) => <SearchBarResult subject={subject} userID={userID} />)}
         </ResultsDiv>
       </MainDiv>
     </>

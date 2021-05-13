@@ -6,7 +6,8 @@ import { getComments, Comment } from '../../service/DataService';
 const Feed: React.FC = () => {
   const [comments, setComments] = useState<Comment[]>([]);
   const fetchComments = async () => {
-    const _comments = await getComments();
+    const _comments = await (await getComments()).reverse();
+
     setComments(_comments);
   };
   useEffect(() => {

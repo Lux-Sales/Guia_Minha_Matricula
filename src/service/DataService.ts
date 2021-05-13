@@ -1,6 +1,7 @@
 /* eslint-disable consistent-return */
 import Swal from 'sweetalert2';
 import api from './API';
+import { AddComment } from '../pages/CommentForm';
 
 export interface Subject{
     id:string,
@@ -13,11 +14,16 @@ export interface Teacher{
     name: string,
 }
 
+export interface UserData{
+    id:string,
+    name: string
+}
+
 export interface Comment{
     comment:string,
     teacher:Teacher,
     subject:Subject,
-    userID:string
+    user:UserData
 }
 
 export const getSubjects = async ():Promise<Subject[]> => {
@@ -43,9 +49,9 @@ export const addSubject = async (subject:Subject) => {
   return response;
 };
 
-export const getTeachers = async () => {
+export const getTeachers = async ():Promise<Teacher[]> => {
   const response = await api.get('/teachers');
-  return response;
+  return response.data.results;
 };
 
 export const addTeacher = async (teacher:Teacher) => {
@@ -72,7 +78,7 @@ export const getComments = async (): Promise<Comment[]> => {
   return response.data;
 };
 
-export const addComment = async (comment:Comment) => {
+export const addComment = async (comment:AddComment) => {
   const response = await api.post('comments/', comment);
   return response;
 };
