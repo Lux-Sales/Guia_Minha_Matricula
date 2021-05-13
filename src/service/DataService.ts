@@ -3,11 +3,13 @@ import Swal from 'sweetalert2';
 import api from './API';
 
 export interface Subject{
+    id:string,
     name: string,
     registerID: string
 }
 
 export interface Teacher{
+    id:string,
     name: string,
 }
 
@@ -18,9 +20,9 @@ export interface Comment{
     userID:string
 }
 
-export const getSubjects = async () => {
+export const getSubjects = async ():Promise<Subject[]> => {
   const response = await api.get('/subjects');
-  return response;
+  return response.data.results;
 };
 
 export const addSubject = async (subject:Subject) => {

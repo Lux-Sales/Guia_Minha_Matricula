@@ -1,17 +1,23 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { Subject } from '../../service/DataService';
 import { MainDiv } from './styles';
+import CommentForm from '../CommentForm';
 
 interface SearchBarResultProps{
-    subjectName: string;
+    subject: Subject;
 }
 
 const SearchBarResult: React.FC<SearchBarResultProps> = (props: SearchBarResultProps) => {
-  const { subjectName } = props;
+  const { subject } = props;
+  const [showModal, setShowModal] = useState(false);
 
   return (
-    <MainDiv>
+    <MainDiv onClick={() => { setShowModal(true); }}>
+      <span>
+        {subject.name}
+      </span>
       <div>
-        {subjectName}
+        {showModal && <CommentForm setShowModal={setShowModal} subjectID={subject.id} />}
       </div>
     </MainDiv>
   );

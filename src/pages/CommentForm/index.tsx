@@ -1,8 +1,13 @@
 import React, { useState } from 'react';
-import { CommentFormField, MainDiv } from './styles';
+import { CommentFormField, MainDiv, HiperDiv } from './styles';
 import Comment from '../Comment';
 
-const CommentForm: React.FC = () => {
+interface CommentFormProps{
+setShowModal:React.Dispatch<React.SetStateAction<boolean>>,
+subjectID: string
+}
+
+const CommentForm: React.FC<CommentFormProps> = (props:CommentFormProps) => {
   const comentarios = [
     {
       user: 'Marcos',
@@ -28,10 +33,11 @@ const CommentForm: React.FC = () => {
   };
 
   return (
-    <>
+    <HiperDiv onClick={() => props.setShowModal(false)}>
       <MainDiv>
         <header>
           <strong>Relate Sua Experiência!</strong>
+          <button onClick={() => props.setShowModal(false)}>Fechar</button>
         </header>
         <CommentFormField>
           <textarea rows={8} placeholder="Escreva aqui!" onChange={(e) => setText(e.target.value)} />
@@ -48,7 +54,7 @@ const CommentForm: React.FC = () => {
         </div>
         {comments.map((com) => <Comment name={com.user} text={com.text} />)}
       </MainDiv>
-    </>
+    </HiperDiv>
   );
 };
 
