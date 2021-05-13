@@ -1,10 +1,12 @@
 import React, { useState } from 'react';
 import { CommentFormField, MainDiv, HiperDiv } from './styles';
 import Comment from '../Comment';
+import { Subject } from '../../service/DataService';
+import SubjectName from '../SubjectName';
 
 interface CommentFormProps{
-setShowModal:React.Dispatch<React.SetStateAction<boolean>>,
-subjectID: string
+  setShowModal: (signUpModalState: boolean) => void;
+  subject: Subject;
 }
 
 const CommentForm: React.FC<CommentFormProps> = (props:CommentFormProps) => {
@@ -26,6 +28,7 @@ const CommentForm: React.FC<CommentFormProps> = (props:CommentFormProps) => {
   const [comments, setComments] = useState(comentarios);
   const [user, setUser] = useState('User');
   const [text, setText] = useState('');
+  const { subject } = props;
 
   const postComment = () => {
     setComments(comments.concat({ user, text }));
@@ -33,12 +36,15 @@ const CommentForm: React.FC<CommentFormProps> = (props:CommentFormProps) => {
   };
 
   return (
-    <HiperDiv onClick={() => props.setShowModal(false)}>
+    <HiperDiv>
       <MainDiv>
         <header>
-          <strong>Relate Sua Experiência!</strong>
-          <button onClick={() => props.setShowModal(false)}>Fechar</button>
+          <strong>Relate sua Experiência!</strong>
+          <button onClick={() => props.setShowModal(false)}>
+            <img src="imgs/close.svg" alt="fechar" />
+          </button>
         </header>
+        <strong>{subject.name}</strong>
         <CommentFormField>
           <textarea rows={8} placeholder="Escreva aqui!" onChange={(e) => setText(e.target.value)} />
           <button
@@ -52,7 +58,9 @@ const CommentForm: React.FC<CommentFormProps> = (props:CommentFormProps) => {
         <div>
           <strong>Relatos</strong>
         </div>
-        {comments.map((com) => <Comment name={com.user} text={com.text} />)}
+        <div>
+          {comments.map((com) => <Comment name={com.user} text={com.text} />)}
+        </div>
       </MainDiv>
     </HiperDiv>
   );

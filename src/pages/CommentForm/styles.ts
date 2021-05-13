@@ -2,16 +2,19 @@ import { shade } from 'polished';
 import styled from 'styled-components';
 
 export const MainDiv = styled.div`
+    position: relative;
+
     width: 42rem;
     height: auto;
-    margin-left: 250px;
-    margin-top: 100px;
+
     border-radius: 10px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, .1),0 8px 16px rgba(0, 0, 0, .1);
 
     background-color: #808FA2;
 
     padding: 1rem;
+
+
 
     header{
         display: flex;
@@ -21,13 +24,29 @@ export const MainDiv = styled.div`
         font-family: Roboto, sans-serif;
         margin-bottom: 1rem;
         padding-left: 0.5rem;
-        button{
+        /* button{
             margin-left: 300px;
             height: 30px;
             width: 50px;
             background: transparent;
             cursor: pointer;
-        }
+        } */
+    }
+
+    header button{
+        position:absolute;
+        right: 0.5rem;
+        top: 0.5rem;
+        background: transparent;
+        border: 1px solid black;
+        border-radius: 10px;
+        font-size: 0;
+
+        cursor: pointer;
+    }
+
+    header button:focus{
+        outline: none;
     }
 
     div strong{
@@ -38,6 +57,11 @@ export const MainDiv = styled.div`
         margin-bottom: 1rem;
         padding-left: 0.5rem;
 
+    }
+
+    div:last-of-type{
+        max-height: 400px;
+        overflow-y: scroll;
     }
 
 `;
@@ -99,9 +123,14 @@ export const CommentFormField = styled.div`
 `;
 
 export const HiperDiv = styled.div`
-    position:absolute;
-    width: 100%;
-    height: 125%;
-    top: 0px;
-    background: rgba(0, 0, 0, 0.644);
+    background: rgba(0, 0, 0, 0.3);
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
 `;
