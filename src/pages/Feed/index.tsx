@@ -25,6 +25,7 @@ const Feed: React.FC = () => {
             <p>ministrada por  </p>
             <h3>{comment.teacher.name}</h3>
             <p>{comment.comment}</p>
+            teste
           </CommentDiv>
         )))}
       </FeedDiv>
