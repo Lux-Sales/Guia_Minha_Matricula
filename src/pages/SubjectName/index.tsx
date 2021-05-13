@@ -5,7 +5,10 @@ import { MainDiv } from './styles';
 
 interface SubjectNameProps{
     subject: Subject;
+<<<<<<< HEAD
     userID: string;
+=======
+>>>>>>> 578f4e0afb1330831798fff75e23d823bc0256ba
     setShowModal: (signUpModalState: boolean) => void;
 }
 
