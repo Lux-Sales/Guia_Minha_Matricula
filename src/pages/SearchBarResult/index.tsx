@@ -5,10 +5,11 @@ import CommentForm from '../CommentForm';
 
 interface SearchBarResultProps{
     subject: Subject;
+    userID:string
 }
 
 const SearchBarResult: React.FC<SearchBarResultProps> = (props: SearchBarResultProps) => {
-  const { subject } = props;
+  const { subject, userID } = props;
   const [showModal, setShowModal] = useState(false);
 
   return (
@@ -17,7 +18,7 @@ const SearchBarResult: React.FC<SearchBarResultProps> = (props: SearchBarResultP
         {subject.name}
       </span>
       <div>
-        {showModal && <CommentForm setShowModal={setShowModal} subjectID={subject.id} />}
+        {showModal && <CommentForm setShowModal={setShowModal} subject={subject} userID={userID} />}
       </div>
     </MainDiv>
   );

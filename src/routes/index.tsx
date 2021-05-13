@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Switch, Route } from 'react-router-dom';
 import HomePage from '../pages/HomePage';
 import AboutPage from '../pages/AboutPage';
@@ -7,17 +7,14 @@ import UserHome from '../pages/UserHome';
 import { login, User } from '../service/UserService';
 
 const Routes: React.FC = () => {
-  const getToken = (user:User) => {
-    const token = login(user);
-    return token;
-  };
+  const [userID, setUserID] = useState(() => localStorage.getItem('@user-id') || '');
 
   return (
     <Switch>
       <Route exact path="/" component={HomePage} />
       <Route exact path="/sobre" component={AboutPage} />
-      <Route exact path="/login" component={LoginPage} />
-      <Route exact path="/userhome" component={UserHome} />
+      <Route exact path="/login" component={() => (<LoginPage setUserID={setUserID} />)} />
+      <Route exact path="/userhome" component={() => (<UserHome userID={userID} />)} />
     </Switch>
   );
 };

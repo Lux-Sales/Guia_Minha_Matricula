@@ -6,19 +6,26 @@ import SubjectRegister from '../SubjectRegister';
 import UserNavBar from '../UserNavBar';
 import { MainDiv, RegistersDiv, LeftDiv } from './styles';
 
-const UserHome: React.FC = () => (
-  <>
-    <UserNavBar />
-    <MainDiv>
-      <LeftDiv>
-        <SearchBar />
-        <RegistersDiv>
-          <SubjectRegister />
-          <ProfessorRegister />
-        </RegistersDiv>
-      </LeftDiv>
-      <Feed />
-    </MainDiv>
-  </>
-);
+interface UserHomeProps{
+    userID:string
+}
+
+const UserHome: React.FC<UserHomeProps> = (props:UserHomeProps) => {
+  const { userID } = props;
+  return (
+    <>
+      <UserNavBar />
+      <MainDiv>
+        <LeftDiv>
+          <SearchBar userID={userID} />
+          <RegistersDiv>
+            <SubjectRegister />
+            <ProfessorRegister />
+          </RegistersDiv>
+        </LeftDiv>
+        <Feed />
+      </MainDiv>
+    </>
+  );
+};
 export default UserHome;

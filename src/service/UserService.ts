@@ -15,13 +15,14 @@ interface SignupData{
     password:string,
 }
 
-interface JWToken{
+interface LoginResponse{
   refresh: string,
-  access: string
+  access: string,
+  id: string
 }
 
-export const login = async (user:User): Promise<JWToken> => {
-  const response = await api.post<JWToken>('login/', user);
+export const login = async (user:User): Promise<LoginResponse> => {
+  const response = await api.post<LoginResponse>('login/', user);
   return response.data;
 };
 

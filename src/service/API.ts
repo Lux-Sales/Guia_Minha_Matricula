@@ -8,7 +8,7 @@ const dev = () => {
 const api = axios.create({
   baseURL: dev()
     ? 'http://localhost:8000/'
-    : '',
+    : 'https://api-guia-minha-matricula.herokuapp.com',
 });
 
 export default api;
