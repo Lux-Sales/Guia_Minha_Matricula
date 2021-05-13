@@ -18,7 +18,7 @@ const UserNavBar: React.FC = () => {
         <button type="button">
           <div>
             <p>Olá,</p>
-            <strong>User</strong>
+            <strong>Usuário</strong>
           </div>
         </button>
         <button onClick={handleLogout}>

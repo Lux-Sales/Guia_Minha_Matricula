@@ -38,7 +38,6 @@ const CommentForm: React.FC<CommentFormProps> = (props:CommentFormProps) => {
     addComment(comment);
     fetchComments();
   };
-
   const findTeacher = async () => {
     const allTeachers = await getTeachers();
     const foundTeacher = allTeachers.find((_teacher) => _teacher.name.toLowerCase() === teacher.toLowerCase());
@@ -78,12 +77,6 @@ const CommentForm: React.FC<CommentFormProps> = (props:CommentFormProps) => {
           <button
             onClick={() => {
               postComment({
-                comment: text,
-                teacher: teacherID,
-                subject: subject.id,
-                user: userID,
-              });
-              console.log({
                 comment: text,
                 teacher: teacherID,
                 subject: subject.id,
